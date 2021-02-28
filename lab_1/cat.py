@@ -18,6 +18,10 @@ cat = (255, 99, 71)
 screen.fill(brown)
 
 def draw_window():
+    """
+    This function draws the background
+    return:
+    """
     rect(screen, (0, 128, 0), (0, 300, 900, 300), 0)  # frame
     rect(screen, white, (270, 15, 225, 275), 10)  # frame
     rect(screen, white, (270, 15, 112.5, 105), 10)  # frame
@@ -31,6 +35,12 @@ def draw_window():
 draw_window()
 
 def draw_cat():
+    """
+    This function draws a cat, parameters determine where the left cat's ear is
+    :param x:
+    :param y:
+    :return:
+    """
     ellipse(screen, cat, (53, 353, 320, 140))  # body
     ellipse(screen, (0, 0, 0), (53, 353, 320, 140), 1)  # body
     ellipse(screen, cat, (43, 433, 28, 41))  # leg
@@ -106,7 +116,10 @@ def draw_cat():
 draw_cat()
 
 def draw_ball():
-    # клубок
+    """
+    This function draws klubok
+    return:
+    """
     circle(screen, gray, (300, 548), 40)
     arc(screen, (0, 0, 0), (290, 538, 10, 30), 2*math.pi/3, 3*math.pi/1.8)
     arc(screen, (0, 0, 0), (300, 535, 10, 35), 2*math.pi/3, 3*math.pi/1.8)
