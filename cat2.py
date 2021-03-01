@@ -5,7 +5,7 @@ import pygame.draw as draw
 pygame.init()
 
 FPS = 30
-screen = pygame.display.set_mode((500, 600))
+screen = pygame.display.set_mode((500, 700))
 gray = (128, 128, 128)
 brown = (0, 100, 0)
 lightBlue = (176, 196, 222)
@@ -18,11 +18,7 @@ screen.fill(brown)
 
 
 def draw_window():
-    """
-    This function draws the background
-    return:
-    """
-    draw.rect(screen, (0, 128, 0), [0, 300, 900, 300], 0)  # frame
+    draw.rect(screen, (0, 128, 0), [0, 300, 900, 400], 0)  # frame
     draw.rect(screen, white, [270, 15, 225, 275], 10)  # frame
     draw.rect(screen, white, [270, 15, 112.5, 105], 10)  # frame
     draw.rect(screen, lightBlue, [274, 19, 108.5, 101], 0)  # outdoors
@@ -37,17 +33,11 @@ draw_window()
 
 
 def draw_cat():
-    """
-    This function draws a cat, parameters determine where the left cat's ear is
-    param x:
-    param y:
-    return:
-    """
     draw.ellipse(screen, cat, (53, 353, 320, 140))  # body
     draw.ellipse(screen, (0, 0, 0), (53, 353, 320, 140), 1)  # body
     draw.ellipse(screen, cat, (43, 433, 28, 41))  # leg
     draw.ellipse(screen, (0, 0, 0), (43, 433, 28, 41), 1)  # leg
-    draw.ellipse(screen, cat, (70, 456, 70, 40))  # leg
+    draw. ellipse(screen, cat, (70, 456, 70, 40))  # leg
     draw.ellipse(screen, (0, 0, 0), (70, 456, 70, 40), 1)  # leg
     draw.circle(screen, cat, (75, 413), 50)  # head
     draw.circle(screen, (0, 0, 0), (75, 413), 50, 1)  # head
@@ -110,18 +100,30 @@ def draw_cat():
     draw.arc(screen, (0, 0, 0), (-64, 435, 140, 50), math.pi / 5.1, 5 * math.pi / 6)
 
 
-def draw_ball():
-    """
-    This function draws the ball
-    return:
-    """
-    draw.circle(screen, gray, (300, 548), 40)
-    draw.arc(screen, (0, 0, 0), (290, 538, 10, 30), 2 * math.pi / 3, 3 * math.pi / 1.8)
-    draw.arc(screen, (0, 0, 0), (300, 535, 10, 35), 2 * math.pi / 3, 3 * math.pi / 1.8)
-
-
 draw_cat()
+
+
+def draw_ball():
+    # клубок
+    draw.circle(screen, gray, (300, 608), 40)
+    draw.arc(screen, (0, 0, 0), (290, 598, 10, 30), 2 * math.pi / 3, 3 * math.pi / 1.8)
+    draw.arc(screen, (0, 0, 0), (300, 595, 10, 35), 2 * math.pi / 3, 3 * math.pi / 1.8)
+
+
 draw_ball()
+
+img = pygame.image.load('kotik.png')
+img = pygame.transform.flip(img, True, False)
+img = pygame.transform.scale(img, (200, 80))
+screen.blit(img, (30, 550))
+
+window = pygame.image.load('window.png')
+window = pygame.transform.scale(window, (235, 282))
+screen.blit(window, (15, 13))
+
+new_cat = pygame.image.load("newcat.png")
+new_cat = pygame.transform.scale(new_cat, (170, 80))
+screen.blit(new_cat, (340, 530))
 
 pygame.display.update()
 clock = pygame.time.Clock()
