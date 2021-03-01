@@ -100,9 +100,6 @@ def draw_cat():
     draw.arc(screen, (0, 0, 0), (-64, 435, 140, 50), math.pi / 5.1, 5 * math.pi / 6)
 
 
-draw_cat()
-
-
 def draw_ball():
     # клубок
     draw.circle(screen, gray, (300, 608), 40)
@@ -110,6 +107,7 @@ def draw_ball():
     draw.arc(screen, (0, 0, 0), (300, 595, 10, 35), 2 * math.pi / 3, 3 * math.pi / 1.8)
 
 
+draw_cat()
 draw_ball()
 
 img = pygame.image.load('kotik.png')
