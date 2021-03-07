@@ -81,6 +81,7 @@ while not finished:
         dx_rect = -dx_rect
     if Y_rect + dy_rect >= 550 or Y_rect + dy_rect <= 0:
         dy_rect = -dy_rect
+
     X += dx
     Y += dy
     X_rect += dx_rect
