@@ -250,9 +250,9 @@ while not finished:
     i += 1
     clouds(coordinate + (i - 1), (220, 220, 220))
     clouds(coordinate + i, (255, 255, 255))
-    if coordinate + i > 930:
-        clouds(coordinate - 750, (255, 255, 255))
-        coordinate = coordinate - 750
+    if coordinate + i > 1050:
+        clouds(coordinate - 785, (255, 255, 255))
+        coordinate = coordinate - 785
         i = 0
     pygame.display.update()
 
