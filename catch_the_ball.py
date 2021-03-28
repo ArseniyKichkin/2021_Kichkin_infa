@@ -5,7 +5,7 @@ import math
 
 pygame.init()
 
-FPS = 40
+FPS = 60
 screen = pygame.display.set_mode((1000, 600))
 
 RED = (255, 0, 0)
@@ -65,7 +65,8 @@ while not finished:
             if math.sqrt((event.pos[0] - X) ** 2 + (event.pos[1] - Y) ** 2) <= R:
                 frame_count += 1
                 Color = COLORS[randint(0, 5)]
-            elif event.pos[0] - X_rect <= 50 and event.pos[1] - Y_rect <= 50:
+            elif (0 <= event.pos[0] - X_rect <= 50) and (
+                    0 <= event.pos[1] - Y_rect <= 50):
                 frame_count += 2
                 Color_rect = COLORS[randint(0, 5)]
 
