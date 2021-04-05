@@ -5,8 +5,7 @@ import pygame
 import numpy
 import pygame.draw as draw
 
-tank_image = pygame.image.load("tank.jpg")  # В репозиторий загружена картинка с именем "tank.jpg".
-# Перед запуском программы скачайте её и добавьте в ту же папку, откуда запускается код.
+tank_image = pygame.image.load("tank.jpg")
 LEVEL = 2
 TARGETS_QUANTITY = 3
 DARK_GREEN = (1, 51, 33)
