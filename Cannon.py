@@ -5,7 +5,8 @@ import pygame
 import numpy
 import pygame.draw as draw
 
-tank_image = pygame.image.load("tank.jpg")
+tank_image = pygame.image.load("tank.jpg")  # В репозиторий загружена картинка с именем "tank.jpg".
+# Перед запуском программы скачайте её и добавьте в ту же папку, откуда запускается код.
 LEVEL = 2
 TARGETS_QUANTITY = 3
 DARK_GREEN = (1, 51, 33)
@@ -81,6 +82,7 @@ class Cannon(object):
     """
     класс Cannon
     """
+
     def __init__(self):
         """
         коструктор для класса Cannon
@@ -174,6 +176,7 @@ class Target(object):
     """
     Класс мишени первого типа
     """
+
     def __init__(self):
         """
         Инициализация новой цели.
@@ -327,8 +330,8 @@ def new_game():
                     Shells.remove(shell)
                     squares.remove(square)
                     collision_occurs()
-        text_score = font.render(str(POINTS), True, BLACK)
-        screen.blit(text_score, [30, 30])
+        text_score = font.render(str(POINTS), True, BLUE)
+        screen.blit(text_score, [870, 30])
         pygame.display.update()
         cannon.power_up()
         screen.fill(BEIGE)
