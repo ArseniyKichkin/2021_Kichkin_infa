@@ -29,14 +29,14 @@ Y_rect = randint(160, 540)
 Color = COLORS[randint(0, 5)]
 Color_rect = COLORS[randint(0, 5)]
 dx = 3
-dx_rect = 3
+dx_rect = 5
 dy = 3
-dy_rect = 3
+dy_rect = 5
 frame_count = 0
 
 
 def new_ball(color, x, y, r):
-    """рисует новый шарик """
+    """рисует новый шарик"""
     circle(screen, color, (x, y), r)
 
 
@@ -49,12 +49,12 @@ while not finished:
     clock.tick(FPS)
 
     pygame.font.init()
-    text_font = pygame.font.Font(None, 60)  # the font to write with
+    text_font = pygame.font.Font(None, 60)  # шрифт
     text_image = text_font.render(str(frame_count), True, (255, 255, 255))
     text_width = text_image.get_width()
     text_height = text_image.get_height()
-    text_x = 900  # right-side
-    text_y = 0  # top
+    text_x = 900  # правая граница
+    text_y = 0  # верхняя граница
     screen.blit(text_image, (text_x, text_y))
 
     for event in pygame.event.get():

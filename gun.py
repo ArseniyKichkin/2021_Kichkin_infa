@@ -226,7 +226,7 @@ def new_game(event=''):
         g1.power_up()
     canv.itemconfig(screen1, text='')
     canv.delete(gun)
-    root.after(750, new_game)
+    root.after(750, new_game())
 
 
 new_game()
