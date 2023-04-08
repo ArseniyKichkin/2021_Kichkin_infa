@@ -110,16 +110,16 @@ def draw_ball():
 draw_cat()
 draw_ball()
 
-img = pygame.image.load('kotik.png')
+img = pygame.image.load('lab_1/kotik.png')
 img = pygame.transform.flip(img, True, False)
 img = pygame.transform.scale(img, (200, 80))
 screen.blit(img, (30, 550))
 
-window = pygame.image.load('window.png')
+window = pygame.image.load('lab_1/window.png')
 window = pygame.transform.scale(window, (235, 282))
 screen.blit(window, (15, 13))
 
-new_cat = pygame.image.load("newcat.png")
+new_cat = pygame.image.load("lab_1/newcat.png")
 new_cat = pygame.transform.scale(new_cat, (170, 80))
 screen.blit(new_cat, (340, 530))
 
