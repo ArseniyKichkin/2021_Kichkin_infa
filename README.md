@@ -1,1 +1,1 @@
-Hello! This is my project. Here are some entertaining games you can enjoy playing.
+Hello! This is my project. Here are some entertaining games and animations you can enjoy.
