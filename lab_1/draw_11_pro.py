@@ -162,14 +162,14 @@ def clouds(x, color):
     draw.circle(screen, color, (-192 + x, 330), 40)
     draw.ellipse(screen, color, (-162 + x, 310, 100, 60))
 
-    draw.rect(screen, color, (250 + x, 300, 80, 30))
-    draw.circle(screen, color, (258 + x, 290), 40)
-    draw.ellipse(screen, color, (278 + x, 280, 90, 50))
-    draw.ellipse(screen, color, (178 + x, 270, 130, 60))
+    draw.rect(screen, color, (-250 + x, 300, 80, 30))
+    draw.circle(screen, color, (-258 + x, 290), 40)
+    draw.ellipse(screen, color, (-278 + x, 280, 90, 50))
+    draw.ellipse(screen, color, (-178 + x, 270, 130, 60))
 
-    draw.circle(screen, color, (500 + x, 350), 50)
-    draw.ellipse(screen, color, (500 + x, 332, 150, 80))
-    draw.ellipse(screen, color, (410 + x, 342, 90, 70))
+    draw.circle(screen, color, (-500 + x, 350), 50)
+    draw.ellipse(screen, color, (-500 + x, 332, 150, 80))
+    draw.ellipse(screen, color, (-410 + x, 342, 90, 70))
 
 
 def cat(x1, y1, length, height):
@@ -214,7 +214,6 @@ def cat(x1, y1, length, height):
 
 FPS = 30
 
-
 screen.fill("white")
 draw.rect(screen, (220, 220, 220), (0, 0, 800, 500))
 
@@ -233,7 +232,6 @@ eskimo(700, 650, 55, 44, 0)
 eskimo(490, 750, 55, 44, 1)
 eskimo(600, 750, 130, 104, 0)
 
-cat(0, 800, 120, 48)
 cat(150, 1000, 120, 48)
 cat(250, 859, 120, 48)
 
@@ -241,19 +239,25 @@ pygame.display.update()
 clock = pygame.time.Clock()
 finished = False
 
-
 i = 0
-coordinate = 140
+coordinate = 500
+
+pygame.display.update()
 
 while not finished:
     clock.tick(FPS)
     i += 1
-    clouds(coordinate + (i - 1), (220, 220, 220))
-    clouds(coordinate + i, (255, 255, 255))
-    if coordinate + i > 1050:
-        clouds(coordinate - 785, (255, 255, 255))
-        coordinate = coordinate - 785
+    clouds(coordinate + 2 * (i - 1), (220, 220, 220))
+    clouds(coordinate + 2 * i, (255, 255, 255))
+
+    if (coordinate + 2 * i) > 1350:
+        pygame.display.update()
+
+        coordinate = 500
         i = 0
+        clouds(coordinate + 2 * (i - 1), (220, 220, 220))
+        clouds(coordinate + 2 * i, (255, 255, 255))
+
     pygame.display.update()
 
     for event in pygame.event.get():
